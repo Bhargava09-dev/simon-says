@@ -1,40 +1,56 @@
 body {
   text-align: center;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
 }
 
-.btn {
-  height: 200px;
-  width: 200px;
-  border-radius: 20%;
-  border: 10px solid black;
-  margin: 2.5rem;
-}
-
+/* Container */
 .btn-container {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;   /* important for responsiveness */
+  gap: 20px;         /* replaces margin chaos */
+  padding: 20px;
 }
 
-.yellow {
-  background-color: #f99b45;
+/* Buttons */
+.btn {
+  width: 20vw;       /* responsive width */
+  height: 20vw;      /* keeps square shape */
+  max-width: 180px;  /* limit for large screens */
+  max-height: 180px;
+  min-width: 80px;   /* limit for small screens */
+  min-height: 80px;
+
+  border-radius: 20%;
+  border: 6px solid black;
 }
 
-.red {
-  background-color: #d95980;
-}
+/* Colors */
+.yellow { background-color: #f99b45; }
+.red    { background-color: #d95980; }
+.purple { background-color: #63aac0; }
+.green  { background-color: #819ff9; }
 
-.purple {
-  background-color: #63aac0;
-}
-
-.green {
-  background-color: #819ff9;
-}
-
+/* Effects */
 .flash {
   background-color: white;
 }
 
 .userflash {
   background-color: green;
+}
+
+/* 📱 Mobile tweaks */
+@media (max-width: 600px) {
+  .btn {
+    width: 35vw;
+    height: 35vw;
+    border-width: 4px;
+  }
+
+  .btn-container {
+    gap: 15px;
+  }
 }
